@@ -1,3 +1,5 @@
+package kruskal;
+
 import java.util.*;
 
 public class Kruskal {

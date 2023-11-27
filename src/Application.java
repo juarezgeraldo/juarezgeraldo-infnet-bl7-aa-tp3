@@ -1,7 +1,7 @@
+import kruskal.Kruskal;
 import minimoheap.MinimoHeap;
 
 import java.io.IOException;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 //public class Application implements Comparable<Edge> {
