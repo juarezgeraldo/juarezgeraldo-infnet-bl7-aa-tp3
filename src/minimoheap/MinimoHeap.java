@@ -11,29 +11,36 @@ public class MinimoHeap {
 
         System.out.println("Informe a quantidade de comandos:");
         int Q = sc.nextInt();
-
-        for (int i = 0; i < Q; i++) {
-            System.out.println("Comando " + (i+1) + " - Informe o comando, conforme:");
+        if (Q >= 1 && Q <= Math.pow(10,5)) {
+            System.out.println("Informe o comando, conforme:");
             System.out.println("            1 v -> Adicionar um elemento v ao heap");
             System.out.println("            2 v -> Excluir o elemento v do heap");
             System.out.println("            3   -> Imprimir o mínimo de todos os elementos do heap");
 
-            System.out.println("Comando:");
-            int command = sc.nextInt();
-            if (command == 1) {
-                System.out.println("Elemento a adicionar:");
-                int v = sc.nextInt();
-                heap.add(v);
-            } else if (command == 2) {
-                System.out.println("Elemento a excluir:");
-                int v = sc.nextInt();
-                heap.remove(v);
-            } else if (command == 3) {
-                System.out.println("Mínimo de todos os elementos do heap:");
-                System.out.println(heap.peek());
+            for (int i = 0; i < Q; i++) {
+                int command = sc.nextInt();
+                if (command == 1) {
+                    int v = sc.nextInt();
+                    if (v < Math.pow(-10,9) && v > Math.pow(10, 9)){
+                        System.out.println("Elemento limitado a -10**9 e 10**9");
+                        break;
+                    }
+                    heap.add(v);
+                } else if (command == 2) {
+                    int v = sc.nextInt();
+                    if (v < Math.pow(-10,9) && v > Math.pow(10, 9)){
+                        System.out.println("Elemento limitado a -10**9 e 10**9");
+                        break;
+                    }
+                    heap.remove(v);
+                } else if (command == 3) {
+                    System.out.println(heap.peek());
+                }
             }
+            System.out.println(heap.peek());
+        }else {
+            System.out.println("Quantidade de comandos limitados a 1 e 10**5");
         }
-        System.out.println(heap.peek());
         sc.close();
     }
 }
